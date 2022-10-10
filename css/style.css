@@ -1,0 +1,159 @@
+
+#logo{
+    width: 475px;
+    animation: hw5_move 5s;
+}
+
+
+@keyframes hw5_move{
+    from{width:25px;}
+    to {width:475px;}
+    0% {opacity: 0;} 
+    100% {opacity: 1;} 
+        
+}
+
+body{
+    font-family:'Poppins','Serif';
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* add flex. html in github need to do 4, 5*/
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+
+a:visited{
+    color: #00FF;
+}
+
+.card > header{
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    flex-basis: 450px;
+}
+
+.pricing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery *{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px){
+
+    header{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+    
+    /* add flex. html in github need to do 4, 5*/
+
+    .nav_links {
+
+        display: flex;
+        flex-direction: row;
+        text-align: right;
+        
+    }
+
+    .card{
+        flex-basis: 275px;
+    }
+    
+    .pricing{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    body > header{
+        position:sticky;
+        top: 0px;
+    }
+
+}
+
+@media all and (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+  }
+
+@media print {
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    nav{
+        width: 100%;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;;
+        justify-content: space-around;
+    }
+
+    #gallery, .gallery{
+        display: none;
+    }
+
+    /* the pricing class is it write */
+
+    .pricing{
+        flex-wrap: nowrap;
+        align-content: flex-end;
+        
+    }
+    .card{
+        border: 2px solid #45ADDD;
+        flex-direction: column;
+        flex-basis: 325px;
+    }
+
+    /* Need to specify after the bullet point */
+
+    div li:nth-child(2)::after{
+        content: " \1F44D";
+    }
+}
+
